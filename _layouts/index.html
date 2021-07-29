@@ -9,6 +9,13 @@
 		margin: auto;
 		max-width: 1200px;
 	}
+	.label{
+		font-size: 10px;
+		margin: 0 20px;
+		padding: 0 5px;
+		background-color: #000;
+		color: #FFFFFF;
+	}
 	</style>
 	<body>
 		<div>
@@ -21,6 +28,8 @@
 					<a href="/blog{{product.url}}">
 						{{ product.title }}
 					</a>
+					<span class="label">{{product.categories}}</span>
+					<div>{{product.date}}</div>
 				</li>
 				{% endfor %}
 			</ul>

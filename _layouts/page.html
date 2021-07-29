@@ -18,6 +18,18 @@
 			</div>
 			<h2>{{page.title}}</h2>
 			{{content}}
+			<div>
+				{% if page.previous %}
+				  <a href="/blog/{{page.previous.url}}">上一篇：{{page.previous.title}}</a>
+				{% else %}
+				  <span>上一篇：没有了</span>
+				{% endif %}
+				{% if page.next %}
+				<a href="/blog/{{page.next.url}}">下一篇:{{page.next.title}}</a>
+				{% else %}
+				<span>下一篇：没有了</span>
+				{% endif %}
+			</div>
 		</div>
 	</body>
 </html>
