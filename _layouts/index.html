@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+	.page{
+		margin: auto;
+		max-width: 1200px;
+	}
+	</style>
+	<body>
+		<div>
+			
+		</div>
+		<div class="page">
+			<ul>
+				{% for product in site.posts %}
+				<li>
+					<a href="/blog{{product.url}}">
+						{{ product.title }}
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</body>
+</html>
