@@ -7,7 +7,16 @@
 	<style>
 	.page{
 		margin: auto;
+		width: 100%;
 		max-width: 1200px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.page-body{
+		width: 80%;
+	}
+	.page-right{
+		width: 20%;
 	}
 	.label{
 		font-size: 10px;
@@ -19,20 +28,25 @@
 	</style>
 	<body>
 		<div>
-			LOGO
+			
 		</div>
 		<div class="page">
-			<ul>
-				{% for product in site.posts %}
-				<li>
-					<a href="/blog{{product.url}}">
-						{{ product.title }}
-					</a>
-					<span class="label">{{product.categories}}</span>
-					<div>{{product.date}}</div>
-				</li>
-				{% endfor %}
-			</ul>
+			<div class="page-body">
+				<ul>
+					{% for product in site.posts %}
+					<li>
+						<a href="/blog{{product.url}}">
+							{{ product.title }}
+						</a>
+						<span class="label">{{product.categories}}</span>
+						<div>{{product.date}}</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="page-right">
+				
+			</div>
 		</div>
 	</body>
 </html>
