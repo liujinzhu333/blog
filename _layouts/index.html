@@ -39,12 +39,16 @@
 	}
 	.item-li{
 		padding: 10px;
+		border-bottom: 1px solid #F0F0F0;
+	}
+	.item-li a{
+		text-decoration: none;
 	}
 	.item-title{
-		text-decoration: none;
-		color: #666;
+		color: #333;
 	}
 	.item-content{
+		padding-top: 5px;
 		color: #999;
 		font-size: 12px;
 	}
@@ -77,13 +81,16 @@
 				<ul class="item-list">
 					{% for item in site.posts %}
 					<li class="item-li">
-						<a class="item-title" href="/blog{{item.url}}">
-							{{ item.title }}
+						<a  href="/blog{{item.url}}">
+							<div class="item-title">
+								{{ item.title }}
+								
+							</div>
+							<div class="item-content">
+								<span class="item-time">{{item.date}}</span>
+								<span class="label">{{item.categories}}</span>
+							</div>
 						</a>
-						<div class="item-content">
-							<span class="item-time">{{item.date}}</span>
-							<span class="label">{{item.categories}}</span>
-						</div>
 					</li>
 					{% endfor %}
 				</ul>
